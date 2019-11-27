@@ -30,8 +30,8 @@ class App extends Component {
               id={list.id}
               header={list.header}
               cards={list.cardIds.map(id => store.allCards[id])}
-              onDeleteClick={this.handleDeleteCard}
-              onAddClick={this.handleAddRandomCard}
+              onDeleteCard={this.handleDeleteCard}
+              onAddCard={this.handleAddRandomCard}
             />
           ))}
         </div>
