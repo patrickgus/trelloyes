@@ -6,7 +6,7 @@ function Card(props) {
     <div className='Card'>
       <button
         type='button'
-        onClick={() => props.onDeleteCard(props.card)}
+        onClick={() => props.onDeleteCard(props.id)}
       >
         delete
       </button>

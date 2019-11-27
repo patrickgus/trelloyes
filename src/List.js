@@ -20,7 +20,7 @@ function List(props) {
         <button
           type='button'
           className='List-add-button'
-          onClick={() => props.onAddCard(props.card)}
+          onClick={() => props.onAddCard(props.id)}
         >
           + Add Random Card
         </button>
