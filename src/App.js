@@ -45,9 +45,11 @@ export default class App extends Component {
   }
 
   handleAddRandomCard = (listId) => {
+    const { lists, allCards } = this.state.store;
+    
     const newCard = newRandomCard();
 
-    const newLists = this.state.store.lists.map(list => {
+    const newLists = lists.map(list => {
       if (list.id === listId) {
 	      return {
           ...list,
@@ -61,7 +63,7 @@ export default class App extends Component {
       store: {
         lists: newLists,
         allCards: {
-          ...this.state.store.allCards,
+          ...allCards,
           [newCard.id]: newCard
         }
       }
