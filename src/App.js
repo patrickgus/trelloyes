@@ -21,7 +21,7 @@ function omit(obj, keyToOmit) {
   );
 }
 
-class App extends Component {
+export default class App extends Component {
   state = {
     store: STORE
   }
@@ -91,5 +91,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
