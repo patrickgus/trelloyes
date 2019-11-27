@@ -26,12 +26,46 @@ class App extends Component {
     store: STORE
   }
 
-  handleDeleteCard() {
-    console.log('handle delete card called');
+  handleDeleteCard = (cardId) => {
+    const { lists, allCards } = this.state.store;
+
+    const newLists = lists.map(list => ({
+      ...list,
+      cardIds: list.cardIds.filter(id => id !== cardId)
+    }));
+
+    const newCards = omit(allCards, cardId);
+
+    this.setState({
+      store: {
+        lists: newLists,
+        allCards: newCards
+      }
+    })
   }
 
-  handleAddRandomCard() {
-    console.log('handle add random card called');
+  handleAddRandomCard = (listId) => {
+    const newCard = newRandomCard();
+
+    const newLists = this.state.store.lists.map(list => {
+      if (list.id === listId) {
+	      return {
+          ...list,
+          cardIds: [...list.cardIds, newCard.id]
+        }
+      }
+      return list;
+    });
+
+    this.setState({
+      store: {
+        lists: newLists,
+        allCards: {
+          ...this.state.store.allCards,
+          [newCard.id]: newCard
+        }
+      }
+    });
   }
 
   render() {
