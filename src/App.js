@@ -8,6 +8,14 @@ class App extends Component {
     store: STORE
   }
 
+  handleDeleteCard() {
+    console.log('handle delete card called');
+  }
+
+  handleAddRandomCard() {
+    console.log('handle add random card called');
+  }
+
   render() {
     const { store } = this.state;
     return (
