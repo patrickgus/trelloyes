@@ -31,5 +31,5 @@ export default function List(props) {
 }
 
 List.defaultProps = {
-  onClickAdd: () => {},
+  onAddCard: () => {},
 }
